@@ -3,10 +3,12 @@ import { Container} from "./styles"
 import HighLight from "@components/HightLight"
 import GroupCard from "@components/GroupCard"
 import { useState } from "react"
-import { FlatList } from "react-native"
+import { FlatList} from "react-native"
+import ListEmpty from "@components/ListEmpty"
+
 
 export default function  Groups() {
-    const [groups, setGroups] = useState(['Galera do Diablo IV', 'Galera do COD']);
+    const [groups, setGroups] = useState([]);
 
     return (
         <Container>
@@ -19,6 +21,9 @@ export default function  Groups() {
                 renderItem={({item}) => (
                     <GroupCard title={item} />
                 )}
+                ListEmptyComponent={
+                     () => <ListEmpty message="Que tal cadastrar sua primeira turma" />
+                }
             />
             
         </Container>
