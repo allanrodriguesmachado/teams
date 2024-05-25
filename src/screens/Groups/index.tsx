@@ -5,11 +5,11 @@ import ListEmpty from "@components/ListEmpty"
 import Button from "@components/Button"
 
 import { useState } from "react"
-import { FlatList} from "react-native"
-import { Container} from "./styles"
+import { FlatList } from "react-native"
+import { Container } from "./styles"
 
 
-export default function  Groups() {
+export default function Groups() {
     const [groups, setGroups] = useState(['ewqewqe']);
 
     return (
@@ -20,16 +20,16 @@ export default function  Groups() {
             <FlatList
                 data={groups}
                 keyExtractor={item => item}
-                renderItem={({item}) => (
+                renderItem={({ item }) => (
                     <GroupCard title={item} />
                 )}
                 ListEmptyComponent={
-                     () => <ListEmpty message="Que tal cadastrar sua primeira turma" />
+                    () => <ListEmpty message="Que tal cadastrar sua primeira turma" />
                 }
             />
 
-            <Button  title="Criar um novo Grupo" />
-            
+            <Button title="Criar um novo Grupo" />
+
         </Container>
     )
 }
