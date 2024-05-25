@@ -1,14 +1,16 @@
 import Header from "@components/Header"
-import { Container} from "./styles"
 import HighLight from "@components/HightLight"
 import GroupCard from "@components/GroupCard"
+import ListEmpty from "@components/ListEmpty"
+import Button from "@components/Button"
+
 import { useState } from "react"
 import { FlatList} from "react-native"
-import ListEmpty from "@components/ListEmpty"
+import { Container} from "./styles"
 
 
 export default function  Groups() {
-    const [groups, setGroups] = useState([]);
+    const [groups, setGroups] = useState(['ewqewqe']);
 
     return (
         <Container>
@@ -25,6 +27,8 @@ export default function  Groups() {
                      () => <ListEmpty message="Que tal cadastrar sua primeira turma" />
                 }
             />
+
+            <Button  title="Criar um novo Grupo" />
             
         </Container>
     )
